@@ -1,57 +1,73 @@
-# Juego-Heroe-y-Bruja-python
+# La Torre Encantada
 
-'''
-LA TORRE ENCANTADA
+**Autores:**  
+- Constanza Olivos  
+- Javier Nanco  
+**Profesor:** Michael Cristi  
+**Fecha de entrega:** 25/11/2023  
+**Interpretado en:** Python 3.11.0  
+**Entorno de desarrollo:** Visual Studio Code  
 
-Autor:  Constanza Olivos
-        Javier Nanco
+## Descripción
 
-Profesor: Michael Cristi.
+Este programa fue creado para resolver el trabajo número 3 del ramo de Grafos (2-2023). El juego simula una carrera entre un héroe y una bruja para encontrar una llave oculta en el mapa. El héroe debe moverse estratégicamente para encontrar la llave antes que la bruja, quien tiene ventaja al conocer la ubicación de la llave, pero está limitada por el azar del dado.
 
-Programa enfocado en solucionar el trabajo número 3 del ramo de grafos 2-2023.
-Basado en soluciones enfocadas en la rubrica entregada en Canvas.
-Fecha de entrega 25/11/2023 a las 9:00
-Interpretado en python 3.11.0 y con el entorno de desarrollo Visual Studio Code.
-CONSTA DE APROXIMADAMENTE 30 SEGUNDOS EN ENTREGAR TODA LA INFORMACIÓN.
+## Contexto del Juego
 
-Contexto: 
-    Una malvada bruja ha llegado al pantano y ha encerrado a la princesa. Nuestro héroe será el 
-    encargado de rescatarla y para ello tendrá que hacer una serie de cálculos matemáticos y 
-    estadísticos apoyados de la computación, los algoritmos y lo aprendido en la unidad de grafos.
+La malvada bruja ha llegado al pantano y ha encerrado a la princesa. Nuestro héroe tiene la misión de rescatarla, pero antes debe encontrar la llave que abre la torre donde está prisionera. Tanto el héroe como la bruja se mueven por el mapa según el resultado de un dado, lo que hace que el juego dependa tanto de la estrategia como de la suerte.
 
-Objetivo del juego: 
-Para nuestro héroe es recorrer el mapa buscando la llave hasta encontrarla. Debe encontrarla antes 
-de que la bruja llegue a robarla. La bruja tiene la ventaja de que sabe donde se encuentra la llave, 
-pero tiene la desventaja del dado. 
+### Objetivo
+El héroe debe encontrar la llave antes de que lo haga la bruja. La bruja sabe dónde está la llave, pero se enfrenta a la limitación del dado, mientras que el héroe se mueve primero en cada turno.
 
-Inicio del juego:
-Al comenzar la partida, nuestro héroe se ubicará en la posición inicial 1 y la bruja en la casilla con la 
-estrella azul. 
-La bruja escogerá al azar 1 de las 3 casillas con el icono de la llave para esconderla, de modo tal que 
-nuestro héroe sabe que 1 de esos 3 lugares tiene la llave. La llave permanecerá en esta casilla hasta 
-que el héroe o la bruja lleguen a ella. 
+## Dinámica del Juego
 
-Dinámica del juego: 
-Para cada turno del juego se lanzará el dado. Nuestro héroe tiene la ventaja de ser el primero en 
-moverse en cada turno y luego hará lo propio la bruja. Ambos se moverán la cantidad indicada por 
-el dado. El dado se lanza una vez y según esos números, ambos se mueven para luego lanzar 
-nuevamente el dado.
+1. **Inicio**: 
+   - El héroe comienza en la posición inicial (casilla 1), mientras que la bruja empieza en una casilla marcada con una estrella azul.
+   - La bruja esconde la llave en una de las tres casillas designadas al azar.
 
-Resultados 
-Los resultados que se solicitan son los siguientes: 
-1. Número de casos de éxito del héroe, desde las distintas casillas. (3)
-2. Número de casos de éxito de la bruja, desde las distintas casillas. 
-3. Como cambian los resultados anteriores si los números del dado rojos aumentan en 1 en 
-cada cara y se mantienen los mismos números azules. 
-4. Como cambian los resultados anteriores si los números del dado azules aumentan en 1 en 
-cada cara y se mantienen los mismos números rojos. 
-5. Número de lanzamientos o turnos máximo y mínimo para el que nuestro héroe encontró la 
-llave. 
-6. Número de lanzamientos o turnos máximo y mínimo para el que la bruja llegó a la llave. 
+2. **Turnos**: 
+   - Se lanza un dado en cada turno para determinar cuántas casillas avanzan tanto el héroe como la bruja.
+   - El héroe se mueve primero y luego la bruja, siguiendo el mismo número de casillas que indica el dado.
 
-Propuesta:
-Proponer una y solo una modificación al juego de forma tal que el héroe tenga una probabilidad de 
-ganar mayor al 50% en el juego. Implementar dicha propuesta en el programa arrojando los datos 
-necesarios para comprobar que se cumple con lo solicitado. 
+3. **Fin del Juego**: 
+   - El juego termina cuando el héroe o la bruja encuentran la llave. El héroe gana si llega primero, mientras que la bruja gana si lo hace antes.
 
-'''
+## Resultados Solicitados
+
+El programa debe proporcionar los siguientes resultados tras la simulación de 5000 partidas:
+
+1. Número de veces que el héroe encuentra la llave desde distintas posiciones iniciales.
+2. Número de veces que la bruja encuentra la llave desde las mismas posiciones.
+3. Cómo cambian estos resultados si las caras del dado rojo aumentan en 1.
+4. Cómo cambian estos resultados si las caras del dado azul aumentan en 1.
+5. Número mínimo y máximo de turnos en los que el héroe encuentra la llave.
+6. Número mínimo y máximo de turnos en los que la bruja encuentra la llave.
+
+## Propuesta de Mejora
+
+Se propone realizar una modificación en el juego para que el héroe tenga una probabilidad mayor al 50% de ganar. Esta modificación se implementa en el programa, y se generan los datos necesarios para demostrar que efectivamente mejora las probabilidades de éxito del héroe.
+
+## Funcionalidades
+
+1. **Simulación del juego**:  
+   - El programa simula 5000 partidas y proporciona las estadísticas sobre el éxito del héroe y la bruja.
+   
+2. **Gráficos y tablas**:  
+   - Se generan gráficos de barras que comparan el número de victorias del héroe y la bruja en diferentes configuraciones de dados.
+   - También se crean tablas que muestran los movimientos mínimos y máximos necesarios para que el héroe o la bruja encuentren la llave.
+
+## Cómo ejecutar el programa
+
+1. Instala Python 3.11.0 y las bibliotecas requeridas:
+   ```bash
+   pip install networkx matplotlib tkinter
+   ```
+
+2. Ejecuta el script:
+   ```bash
+   python juego_heroe_bruja.py
+   ```
+
+3. Se abrirá una interfaz gráfica donde podrás visualizar los resultados y la comparación de las estrategias.
+
+Este programa combina teoría de grafos, simulaciones y visualizaciones para proporcionar un análisis detallado del juego y posibles mejoras en las estrategias del héroe.
